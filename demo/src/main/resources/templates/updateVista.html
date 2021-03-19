@@ -1,0 +1,35 @@
+<html>
+<body>
+
+<br>
+<br>
+
+<table border="2">
+    <thead border="2">
+    <tr>
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>APELLIDO</th>
+        <th>PROCESADO</th>
+        <th>Seleccionar</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <span th:if="${user.procesado != false}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.nombre}"></td>
+            <td th:text="${user.apellido}"></td>
+            <td th:text="${user.procesado}"></td>
+            <td><a th:href="@{'/selecUser/'+ ${user.id}}">Seleccionar</a></td>
+        </span>
+    </tr>
+    </tbody>
+</table>
+
+<br>
+<br>
+
+
+</body>
+</html>
